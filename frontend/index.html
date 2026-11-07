@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerPulse AI - Intelligent AI-Powered Career Platform</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+
+  <!-- Toast Notifications Container -->
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
+  <!-- Auth Modal Target -->
+  <div id="auth-modal" class="hidden"></div>
+
+  <!-- Primary Application Wrapper -->
+  <div class="flex-1 flex overflow-hidden">
+    <!-- Sidebar (Collapsible for authenticated dashboard views) -->
+    <aside id="app-sidebar" class="hidden w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex-col justify-between shrink-0 transition-all z-30">
+      <!-- Sidebar Top -->
+      <div class="p-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8 cursor-pointer" onclick="state.setView('dashboard')">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/25 font-black text-xl">
+            CP
+          </div>
+          <div>
+            <span class="font-extrabold text-lg tracking-tight text-slate-900 dark:text-white">CareerPulse<span class="text-blue-600">.ai</span></span>
+            <div class="text-[10px] font-semibold text-slate-400">Personalized Career OS</div>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav id="nav-items-container" class="space-y-1 overflow-y-auto max-h-[calc(100vh-230px)] pr-1">
+          <!-- Populated dynamically by app.js -->
+        </nav>
+      </div>
+
+      <!-- Sidebar Bottom Profile & Controls -->
+      <div class="p-4 border-t border-slate-200 dark:border-slate-800 space-y-3">
+        <div class="flex items-center justify-between px-2">
+          <span class="text-xs text-slate-400 font-bold uppercase">Theme</span>
+          <button onclick="state.toggleTheme()" class="p-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <span class="dark:hidden">🌙 Dark Mode</span>
+            <span class="hidden dark:inline">☀️ Light Mode</span>
+          </button>
+        </div>
+
+        <div id="user-profile-bar" class="p-2.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 flex items-center justify-between">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Viewport Content Area -->
+    <main class="flex-1 overflow-y-auto min-h-screen flex flex-col justify-between">
+      <div id="main-content" class="p-4 sm:p-8 max-w-7xl mx-auto w-full">
+        <!-- Populated dynamically by active view -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Application Logic Scripts -->
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/state.js"></script>
+  <script src="/static/js/views/landing.js"></script>
+  <script src="/static/js/views/auth.js"></script>
+  <script src="/static/js/views/dashboard.js"></script>
+  <script src="/static/js/views/profile.js"></script>
+  <script src="/static/js/views/career_analysis.js"></script>
+  <script src="/static/js/views/skill_gap.js"></script>
+  <script src="/static/js/views/roadmap.js"></script>
+  <script src="/static/js/views/resume_builder.js"></script>
+  <script src="/static/js/views/cover_letter.js"></script>
+  <script src="/static/js/views/interview_prep.js"></script>
+  <script src="/static/js/views/mock_interview.js"></script>
+  <script src="/static/js/views/job_matcher.js"></script>
+  <script src="/static/js/views/projects.js"></script>
+  <script src="/static/js/views/chatbot.js"></script>
+  <script src="/static/js/views/reports.js"></script>
+  <script src="/static/js/views/admin.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
+
